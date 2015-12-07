@@ -1,18 +1,4 @@
 Attribute VB_Name = "Module2"
-
-''''''''''''''''''''''''''''''''''''''''''''''''''
-' Main: get_TZLtr()
-' Description: Get the local time zone and convert it to a letter and a possible modifier.  
-' Author: Mike Bail <bail@infionline.net>
-' Version: 1.0
-' Build: 1
-' Date: 2015-12-07
-' Contains: None
-' Dependancy: None
-' Notes: 
-' ToDo: 
-''''''''''''''''''''''''''''''''''''''''''''''''''
-
 Option Explicit
 ' Modified from the following code samples
 ' Posted by Ruddles of Glevum Castra, Britannia at:
@@ -34,7 +20,7 @@ Option Explicit
     
     ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     ' NOTE: If you are using the Windows WinAPI Viewer Add-In to get
-    ' function declarations, not (sic) that there is an error in the
+    ' function declarations, not that there is an error in the
     ' TIME_ZONE_INFORMATION structure. It defines StandardName and
     ' DaylightName As 32. This is fine if you have an Option Base
     ' directive to set the lower bound of arrays to 1. However, if

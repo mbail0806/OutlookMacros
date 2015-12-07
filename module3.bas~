@@ -1,20 +1,4 @@
 Attribute VB_Name = "Module3"
-
-''''''''''''''''''''''''''''''''''''''''''''''''''
-' Main: F= ClipBoard_SetData(String)
-' Description: Copy a string to the system clipboard
-' Author: MSDN 
-'   https://support.microsoft.com/en-us/kb/210213
-'   Article ID: 210213 - Last Review: 12/05/2015 11:26:06 - Revision: 3.0
-' Version: 3.0
-' Build: 
-' Date: 2015-12-05
-' Contains: None
-' Dependancy: None
-' Notes: 
-' ToDo: 
-''''''''''''''''''''''''''''''''''''''''''''''''''
-
 Option Explicit
 Declare Function GlobalUnlock Lib "kernel32" (ByVal hMem As Long) _
    As Long

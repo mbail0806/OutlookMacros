@@ -1,20 +1,4 @@
 Attribute VB_Name = "Module4"
-
-''''''''''''''''''''''''''''''''''''''''''''''''''
-' Main: F= ExtractDTGwSender(Object, Boolean) String
-' Description: Extract the date and time the message was sent.  The time is extracted as local time.  If Boolean is true, copy data to the system clipboard.  
-' Author: Mike Bail <bail@infionline.net>
-' Version: 1.0
-' Build: 1
-' Date: 2015-12-07
-' Contains: None
-' Dependancy: 
-'   get_TZLtr()
-'   Clipboard_SetData(String)
-' Notes: 
-' ToDo: 
-''''''''''''''''''''''''''''''''''''''''''''''''''
-
 Option Explicit
 
 Function ExtractDTGwSender(eds_CurrMsg As Object, eds_Clip As Boolean) As String
@@ -51,7 +35,7 @@ Select Case LCase(eds_Sender)
     Case "iecnorth@aol.com", "dave.bailey@iecbiz.com"
         eds_SenderIntl = "dcb"
     Case Else
-        eds_SenderIntl = "xxx"
+        eds_SenderIntl = "unk"
 End Select
 
 eds_Msg = eds_SenderIntl & "_" & Format(eds_SentDTG, "yyyymmddThhmmss") & get_TZLtr()
@@ -61,3 +45,4 @@ If eds_Clip Then ClipBoard_SetData (eds_Msg)
 ExtractDTGwSender = eds_Msg
 
 End Function
+

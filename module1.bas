@@ -1,16 +1,17 @@
 Attribute VB_Name = "Module1"
 
 ''''''''''''''''''''''''''''''''''''''''''''''''''
-' Main: Subroutine ExtractAttachments()
-' Description: Extract the attachment 
+' Main: S= ExtractAttachments()
+' Description: Extract the attachment from a message and add the transmittal date and time to the file name.  
 ' Author: Mike Bail <bail@infionline.net>
 ' Version: 1.0
 ' Build: 1
 ' Date: 2015-12-06
 ' Contains: 
-'   f: ea_CleanSubj
+'   F= ea_CleanSubj
 ' Dependancy: 
-'   f: ExtractDTGwSender
+'   F= ExtractDTGwSender
+' Notes: 
 ' ToDo: 
 '   Still have to get attachment object and see how to save it to a particular directory
 ''''''''''''''''''''''''''''''''''''''''''''''''''
