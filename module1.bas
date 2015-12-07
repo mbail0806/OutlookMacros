@@ -11,6 +11,8 @@ Attribute VB_Name = "Module1"
 '   f: ea_CleanSubj
 ' Dependancy: 
 '   f: ExtractDTGwSender
+' ToDo: 
+'   Still have to get attachment object and see how to save it to a particular directory
 ''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Option Explicit
