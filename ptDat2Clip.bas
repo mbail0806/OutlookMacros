@@ -1,4 +1,4 @@
-Attribute VB_Name = "Module3"
+Attribute VB_Name = "ptDat2Clip"
 
 ''''''''''''''''''''''''''''''''''''''''''''''''''
 ' Main: F= ClipBoard_SetData(String)

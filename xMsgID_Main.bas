@@ -1,8 +1,9 @@
-Attribute VB_Name = "Module1"
+Attribute VB_Name = "xMsgID_Main"
 
 ''''''''''''''''''''''''''''''''''''''''''''''''''
 ' Main: S= ExtractAttachments()
-' Description: Extract the attachment from a message and add the transmittal date and time to the file name.  
+' Description: Extract the attachment from a message 
+'	and add the transmittal date and time to the file name.  
 ' Author: Mike Bail <bail@infionline.net>
 ' Version: 1.0
 ' Build: 1
@@ -13,7 +14,8 @@ Attribute VB_Name = "Module1"
 '   F= ExtractDTGwSender
 ' Notes: 
 ' ToDo: 
-'   Still have to get attachment object and see how to save it to a particular directory
+'   Still have to get attachment object and see how to save 
+'	it to a particular directory
 ''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Option Explicit
