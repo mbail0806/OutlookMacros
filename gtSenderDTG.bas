@@ -1,4 +1,4 @@
-Attribute VB_Name = "gtSender-DTG"
+Attribute VB_Name = "gtSenderDTG"
 
 ''''''''''''''''''''''''''''''''''''''''''''''''''
 ' Main: F= ExtractDTGwSender(Object, Boolean) String
