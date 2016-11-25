@@ -40,6 +40,10 @@ eds_Sender = eds_CurrMsg.SenderEmailAddress
 
 ' Get the senders initials from a case statement
 Select Case LCase(eds_Sender)
+    Case "lbail@infionline.net"
+        eds_SenderIntl = "lmb"
+    Case "thomasrichardbail@gmail.com"
+        eds_SenderIntl = "trb"
     Case "emiman@msn.com"
         eds_SenderIntl = "hag"
     Case "gliposchak@othr.net"
