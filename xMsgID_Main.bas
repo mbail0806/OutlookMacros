@@ -31,8 +31,6 @@ Dim ea_CurrMsg As Object
 Dim ea_Subject As String
 Dim ea_MsgDTG As String
 
-' Note added to test github
-
 ' Get information out of the current message
 Set ea_CurrMsg = Application.ActiveInspector.CurrentItem
 ea_MsgDTG = ExtractDTGwSender(ea_CurrMsg, False)
