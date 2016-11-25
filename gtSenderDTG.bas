@@ -40,18 +40,30 @@ eds_Sender = eds_CurrMsg.SenderEmailAddress
 
 ' Get the senders initials from a case statement
 Select Case LCase(eds_Sender)
-    Case "val.kozak@iecbiz.com"
-        eds_SenderIntl = "vk"
-    Case "gklott@yarcom.com"
-        eds_SenderIntl = "gkl"
+    Case "emiman@msn.com"
+        eds_SenderIntl = "hag"
+    Case "gliposchak@othr.net"
+        eds_SenderIntl = "gml"
+    Case "dktaylor@wrsystems.com", "davetaylor76@yahoo.com"
+        eds_SenderIntl = "dkt"
+    Case "hruehle@wrsystems.com"
+        eds_SenderIntl = "hjr"
+    Case "driffle@wrsystems.com"
+        eds_SenderIntl = "dlr"
+    Case "ieceast@mindspring.com", "bail@infionline.net"
+        eds_SenderIntl = "mtb"
+    Case "n26_sanchez@hotmail.com"
+        eds_SenderIntl = "jns"
+    Case "roy_d_esquibel@raytheon.com"
+        eds_SenderIntl = "rde"
     Case "iecsouth@aol.com", "bill.stark@iecbiz.com"
         eds_SenderIntl = "wrs"
-    Case "ieceast@mindspring.com", "bail@infionline.net", "mike.bail@iecbiz.com"
-        eds_SenderIntl = "mtb"
+    Case "gklott@yarcom.com"
+        eds_SenderIntl = "gkl"
     Case "iecnorth@aol.com", "dave.bailey@iecbiz.com"
         eds_SenderIntl = "dcb"
     Case Else
-        eds_SenderIntl = "xxx"
+        eds_SenderIntl = "unk"
 End Select
 
 eds_Msg = eds_SenderIntl & "_" & Format(eds_SentDTG, "yyyymmddThhmmss") & get_TZLtr()
