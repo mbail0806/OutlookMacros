@@ -2,20 +2,20 @@ Attribute VB_Name = "xMsgID_Main"
 
 ''''''''''''''''''''''''''''''''''''''''''''''''''
 ' Main: S= ExtractAttachments()
-' Description: Extract the attachment from a message 
-'	and add the transmittal date and time to the file name.  
+' Description: Extract the attachment from a message
+'       and add the transmittal date and time to the file name.
 ' Author: Mike Bail <bail@infionline.net>
 ' Version: 1.0
 ' Build: 1
 ' Date: 2015-12-06
-' Contains: 
+' Contains:
 '   F= ea_CleanSubj
-' Dependancy: 
+' Dependancy:
 '   F= ExtractDTGwSender
-' Notes: 
-' ToDo: 
-'   Still have to get attachment object and see how to save 
-'	it to a particular directory
+' Notes:
+' ToDo:
+'   Still have to get attachment object and see how to save
+'       it to a particular directory
 ''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Option Explicit
@@ -47,11 +47,11 @@ Select Case ea_MsgRtn
     Case vbYes
         ClipBoard_SetData (ea_MsgDTG & "_" & ea_Subject)
     Case vbNo
-        ClipBoard_SetData (ea_MsgDTG)
+        ClipBoard_SetData ("_" & ea_MsgDTG)
     Case vbCancel
         ClipBoard_SetData ("")
 End Select
-        
+
 End Sub
 
 Private Function ea_CleanSubj(eacs_String As String) As String
@@ -60,11 +60,11 @@ Dim eacs_RtnString As String
 
 eacs_PreLen = InStr(eacs_String, ": ")
 
-If (eacs_PreLen = 4) Or (eacs_PreLen = 5) Then
+If (eacs_PreLen <= 4) Then
     Select Case LCase(Left(eacs_String, eacs_PreLen))
-        Case "re: "
+        Case "re:", "fw:", "RE:", "Re:"
             eacs_RtnString = Right(eacs_String, (Len(eacs_String) - 4))
-        Case "fwd: "
+        Case "fwd:", "FWD:", "Fwd:", "fwd:"
             eacs_RtnString = Right(eacs_String, (Len(eacs_String) - 5))
         Case Else
             eacs_RtnString = eacs_String
@@ -73,7 +73,21 @@ Else
     eacs_RtnString = eacs_String
 End If
 
+' Clean up windows illegal file name characters (and some of my own)
+eacs_RtnString = Replace(eacs_RtnString, ":", "~")
+eacs_RtnString = Replace(eacs_RtnString, "/", "~")
+eacs_RtnString = Replace(eacs_RtnString, "\", "~")
+eacs_RtnString = Replace(eacs_RtnString, "*", "~")
+eacs_RtnString = Replace(eacs_RtnString, "?", "~")
+eacs_RtnString = Replace(eacs_RtnString, "|", "~")
+eacs_RtnString = Replace(eacs_RtnString, """", "~") 'double quote mark
+eacs_RtnString = Replace(eacs_RtnString, "'", "~") 'single quote mark
+eacs_RtnString = Replace(eacs_RtnString, "<", "~")
+eacs_RtnString = Replace(eacs_RtnString, ">", "~")
+eacs_RtnString = Replace(eacs_RtnString, ".", "~")
+eacs_RtnString = Replace(eacs_RtnString, ",", "~")
+
+' Return the cleaned subject line
 ea_CleanSubj = eacs_RtnString
 
 End Function
-

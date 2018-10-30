@@ -2,17 +2,17 @@ Attribute VB_Name = "gtSenderDTG"
 
 ''''''''''''''''''''''''''''''''''''''''''''''''''
 ' Main: F= ExtractDTGwSender(Object, Boolean) String
-' Description: Extract the date and time the message was sent.  The time is extracted as local time.  If Boolean is true, copy data to the system clipboard.  
+' Description: Extract the date and time the message was sent.  The time is extracted as local time.  If Boolean is true, copy data to the system clipboard.
 ' Author: Mike Bail <bail@infionline.net>
 ' Version: 1.0
 ' Build: 1
 ' Date: 2015-12-07
 ' Contains: None
-' Dependancy: 
+' Dependancy:
 '   get_TZLtr()
 '   Clipboard_SetData(String)
-' Notes: 
-' ToDo: 
+' Notes:
+' ToDo:
 ''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Option Explicit
@@ -46,7 +46,7 @@ Select Case LCase(eds_Sender)
         eds_SenderIntl = "trb"
     Case "emiman@msn.com"
         eds_SenderIntl = "hag"
-    Case "gliposchak@othr.net"
+    Case "gliposchak@othr.net", "gliposchak@wrsystems.com"
         eds_SenderIntl = "gml"
     Case "dktaylor@wrsystems.com", "davetaylor76@yahoo.com"
         eds_SenderIntl = "dkt"
@@ -66,6 +66,8 @@ Select Case LCase(eds_Sender)
         eds_SenderIntl = "gkl"
     Case "iecnorth@aol.com", "dave.bailey@iecbiz.com"
         eds_SenderIntl = "dcb"
+    Case "val.kozak@iecbiz.com"
+        eds_SenderIntl = "vk"
     Case Else
         eds_SenderIntl = "unk"
 End Select
