@@ -57,21 +57,28 @@ End Sub
 Private Function ea_CleanSubj(eacs_String As String) As String
 Dim eacs_PreLen As Integer
 Dim eacs_RtnString As String
+Dim eacs_IsClean As Boolean
 
-eacs_PreLen = InStr(eacs_String, ": ")
+eacs_IsClean = False
 
-If (eacs_PreLen <= 4) Then
-    Select Case LCase(Left(eacs_String, eacs_PreLen))
-        Case "re:", "fw:", "RE:", "Re:"
-            eacs_RtnString = Right(eacs_String, (Len(eacs_String) - 4))
-        Case "fwd:", "FWD:", "Fwd:", "fwd:"
-            eacs_RtnString = Right(eacs_String, (Len(eacs_String) - 5))
-        Case Else
-            eacs_RtnString = eacs_String
-    End Select
-Else
-    eacs_RtnString = eacs_String
-End If
+While Not eacs_IsClean
+    eacs_PreLen = InStr(eacs_String, ": ")
+    If (eacs_PreLen <= 4) Then 'remove prefixes
+        Select Case LCase(Left(eacs_String, eacs_PreLen))
+            Case "re:", "fw:"
+                eacs_String = Right(eacs_String, (Len(eacs_String) - 4))
+            Case "fwd:"
+                eacs_String = Right(eacs_String, (Len(eacs_String) - 5))
+            Case Else
+                eacs_RtnString = eacs_String
+                eacs_IsClean = True
+        End Select
+    Else
+        eacs_RtnString = eacs_String
+        eacs_IsClean = True
+    End If
+Wend 'Not eacsIsClean
+
 
 ' Clean up windows illegal file name characters (and some of my own)
 eacs_RtnString = Replace(eacs_RtnString, ":", "~")
