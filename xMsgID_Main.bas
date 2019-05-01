@@ -93,6 +93,7 @@ eacs_RtnString = Replace(eacs_RtnString, "<", "~")
 eacs_RtnString = Replace(eacs_RtnString, ">", "~")
 eacs_RtnString = Replace(eacs_RtnString, ".", "~")
 eacs_RtnString = Replace(eacs_RtnString, ",", "~")
+eacs_RtnString = Replace(eacs_RtnString, "=", "~")
 
 ' Return the cleaned subject line
 ea_CleanSubj = eacs_RtnString
