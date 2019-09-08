@@ -94,6 +94,12 @@ Function get_TZLtr() As String
             gtl_TZOffsetR = ((-gtl_TZI.Bias - gtl_TZI.DaylightBias) / 60)
     End Select
 
+    Debug.Print gtl_DST
+    Debug.Print gtl_TZI.Bias
+    Debug.Print gtl_TZI.DaylightBias
+    Debug.Print gtl_TZI.StandardBias
+    
+    
     If gtl_TZOffset < gtl_TZOffsetR Then
         gtl_TZMod = "#"
     Else

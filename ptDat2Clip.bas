@@ -3,16 +3,16 @@ Attribute VB_Name = "ptDat2Clip"
 ''''''''''''''''''''''''''''''''''''''''''''''''''
 ' Main: F= ClipBoard_SetData(String)
 ' Description: Copy a string to the system clipboard
-' Author: MSDN 
+' Author: MSDN
 '   https://support.microsoft.com/en-us/kb/210213
 '   Article ID: 210213 - Last Review: 12/05/2015 11:26:06 - Revision: 3.0
 ' Version: 3.0
-' Build: 
+' Build:
 ' Date: 2015-12-05
 ' Contains: None
 ' Dependancy: None
-' Notes: 
-' ToDo: 
+' Notes:
+' ToDo:
 ''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Option Explicit
