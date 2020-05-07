@@ -56,7 +56,7 @@ Select Case LCase(eds_Sender)
         eds_SenderIntl = "dlr"
     Case "ieceast@mindspring.com", "bail@infionline.net"
         eds_SenderIntl = "mtb"
-    Case "n26_sanchez@hotmail.com"
+    Case "n26_sanchez@hotmail.com", "javier.sanchez3@navy.mil"
         eds_SenderIntl = "jns"
     Case "roy_d_esquibel@raytheon.com"
         eds_SenderIntl = "rde"
