@@ -32,7 +32,7 @@ Dim eds_SenderIntl As String
 
 
 ' Get information out of the current message
-eds_SentDTG = eds_CurrMsg.SentOn
+eds_SentDTG = eds_GetZuluSentTime(eds_CurrMsg)
 eds_Sender = eds_CurrMsg.SenderEmailAddress
 ' eds_TZ = TimeZone.CurrentTimeZone
 ' eds_ZoneNum = eds_TZ.Bias
@@ -72,10 +72,28 @@ Select Case LCase(eds_Sender)
         eds_SenderIntl = "unk"
 End Select
 
-eds_Msg = eds_SenderIntl & "_" & Format(eds_SentDTG, "yyyymmddThhmmss") & get_TZLtr()
+eds_Msg = eds_SenderIntl & "_" & Format(eds_SentDTG, "yyyymmddThhmmss") & "Z"
 
 If eds_Clip Then ClipBoard_SetData (eds_Msg)
 
 ExtractDTGwSender = eds_Msg
 
 End Function
+
+'----------
+
+Function eds_GetZuluSentTime(gzst_Msg As Outlook.MailItem) As String
+    ' Purpose: Returns UTC message sent time.'
+    ' Based on code written by BlueDevilFan on 4/28/2009'
+    ' //techniclee.wordpress.com/'
+    ' And information gathered by Diane Poremsky'
+    'https://www.slipstick.com/developer/read-mapi-properties-exposed-outlooks-object-model/'
+    
+    Const PR_CLIENT_SUBMIT_TIME = "http://schemas.microsoft.com/mapi/proptag/0x00390040"
+    Dim gzst_PA As Outlook.PropertyAccessor
+    
+    Set gzst_PA = gzst_Msg.PropertyAccessor
+    eds_GetZuluSentTime = gzst_PA.GetProperty(PR_CLIENT_SUBMIT_TIME)
+    Set gzst_PA = Nothing
+End Function
+
