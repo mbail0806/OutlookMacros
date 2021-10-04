@@ -46,7 +46,7 @@ Select Case LCase(eds_Sender)
         eds_SenderIntl = "trb"
     Case "emiman@msn.com"
         eds_SenderIntl = "hag"
-    Case "gliposchak@othr.net", "gliposchak@wrsystems.com"
+    Case "gliposchak@othr.net", "greg@othr.net", "gliposchak@wrsystems.com"
         eds_SenderIntl = "gml"
     Case "dktaylor@wrsystems.com", "davetaylor76@yahoo.com"
         eds_SenderIntl = "dkt"
@@ -68,8 +68,6 @@ Select Case LCase(eds_Sender)
         eds_SenderIntl = "dcb"
     Case "val.kozak@iecbiz.com"
         eds_SenderIntl = "vk"
-    Case "rbarnes@wrsystems.com"
-        eds_SenderIntl = "rb"
     Case Else
         eds_SenderIntl = "unk"
 End Select
