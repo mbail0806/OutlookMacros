@@ -72,6 +72,10 @@ Select Case LCase(eds_Sender)
         eds_SenderIntl = "rb"
     Case "jeruehle@wrsystems.com", "jlacks@wrsystems.com"
         eds_SenderIntl = "jer"
+    Case "rbarnes@wrsystems.com"
+        eds_SenderIntl = "rib"
+    Case "legregg@wrsystems.com"
+        eds_SenderIntl = "leg"
     Case Else
         eds_SenderIntl = "unk"
 End Select
