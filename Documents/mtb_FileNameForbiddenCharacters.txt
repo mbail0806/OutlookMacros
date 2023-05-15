@@ -1,0 +1,26 @@
+The forbidden printable ASCII characters are:
+
+Linux/Unix:
+
+  / (forward slash)
+Windows:
+
+  < (less than)
+  > (greater than)
+  : (colon - sometimes works, but is actually NTFS Alternate Data Streams)
+  " (double quote)
+  / (forward slash)
+  \ (backslash)
+  | (vertical bar or pipe)
+  ? (question mark)
+  * (asterisk)
+Non-printable characters
+
+If your data comes from a source that would permit non-printable characters then there is more to check for.
+
+Linux/Unix:
+
+  0 (NULL byte)
+Windows:
+
+  0-31 (ASCII control characters)
